@@ -28,15 +28,6 @@ export class SliderComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    
-    $(() =>{
-      $('.bxslider').bxSlider({
-        mode: 'fade',
-        captions: true,
-        responsive:true,
-        slideWidth: 500, 
-      });
-    });
     this.getProjects();
   }
   
@@ -45,15 +36,23 @@ export class SliderComponent implements OnInit{
   }
 
   getProjects(){
-  	this._projectService.getProjects().subscribe(
-  		response => {
+    this._projectService.getProjects().subscribe(
+      response => {
         this.projects = response.project
-  			console.log(response)
-  		},
-  		error => {
-  			console.log(<any>error);
-  		}
-  	);
+        console.log(response);
+        setTimeout(() => {
+          $('.bxslider').bxSlider({
+            mode: 'fade',
+            slideMargin:10,
+            captions: true,
+            slideWidth: 600
+          });
+        }, 0);
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
   }
 
 }

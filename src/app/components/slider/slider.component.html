@@ -1,5 +1,7 @@
 <div class="container2">
-    <div class="bxslider">
-        <div><img  src="../src/assets/img/ia1.jpg"  title="ia1" /></div>
-      </div>
+  <ul class="bxslider">
+    <div *ngFor="let project of projects">
+      <img src="{{ url + 'get-image/' + project.image }}"  />
     </div>
+  </ul>
+</div>

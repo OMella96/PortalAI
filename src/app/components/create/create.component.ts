@@ -34,7 +34,12 @@ export class CreateComponent implements OnInit{
       response =>{
         if(response.project){
           this._uploadService.makeFileRequest(global.url+'upload-image/'+response.project._id,[],this.filesToUpload,'image')
-          .then((result:any) =>{  this.status="success";  form.reset();})
+          .then((result:any) =>{  
+            this.status="success";  
+            setTimeout(() => {
+              window.location.href='http://localhost:4200/projects'; // Cambia "https://tu-url.com" por la URL a la que quieres redirigir al usuario.
+            }, 2000);
+           })
          
         }else{
           this.status="false";

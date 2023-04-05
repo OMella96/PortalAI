@@ -35,12 +35,12 @@
 		</p>
 
 		<p>
-			<label for="year">Año de lanzamiento</label>
+			<label for="year">Año de Creacion</label>
 			<input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" />
 		</p>
 
 		<p>
-			<label for="langs">Lenguajes utilizados</label>
+			<label for="langs">Promps utilizados</label>
 			<input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required />
 			<span class="form_error" *ngIf="langs.touched && !langs.valid">
 				Los lenguajes son obligatorios
