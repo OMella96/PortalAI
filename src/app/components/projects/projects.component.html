@@ -1,0 +1,12 @@
+<div class="container"> 
+    <h2>Responses</h2>
+<ul>
+    <li *ngFor="let project of projects" class="project">
+        <a [routerLink]="['/project',project._id]">
+          <img class="imgpe" src="{{url+'get-image/'+project.image}}" *ngIf="project.image">
+          {{project.name}} -
+          {{project.category}}
+       </a>
+    </li>
+</ul>
+</div>
